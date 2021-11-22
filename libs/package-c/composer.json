@@ -1,0 +1,16 @@
+{
+    "name": "demo-nx-php/package-c",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DemoNxPhp\\PackageC\\": "libs/package-c"
+        }
+    },
+    "authors": [
+        {
+            "name": "Damien Retzinger",
+            "email": "damienwebdev@gmail.com"
+        }
+    ]
+}

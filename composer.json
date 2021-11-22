@@ -4,7 +4,9 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Damien\\DemoNxPhp\\": "libs/"
+            "DemoNxPhp\\PackageA\\": "vendor/demo-nx-php/package-a",
+            "DemoNxPhp\\PackageB\\": "vendor/demo-nx-php/package-b",
+            "DemoNxPhp\\PackageC\\": "vendor/demo-nx-php/package-c"
         }
     },
     "authors": [

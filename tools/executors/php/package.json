@@ -1,0 +1,5 @@
+{
+  "executors": "./executor.json",
+  "name": "@damienwebdev/php-executor",
+  "version": "0.1.0"
+}

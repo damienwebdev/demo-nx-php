@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "phpunit": {
+      "implementation": "./phpunit/phpunit",
+      "schema": "./phpunit/schema.json",
+      "description": "Runs `phpunit` to test PHP Packages."
+    }
+  }
+}

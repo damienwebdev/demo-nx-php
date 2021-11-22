@@ -1,4 +1,131 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "package-a": {
+      "root": "libs/package-a",
+      "sourceRoot": "libs/package-a/src",
+      "projectType": "library",
+      "targets": {
+        "test": {
+          "executor": "./dist/tools/executors/php:phpunit",
+          "dependsOn": [
+            {
+              "target": "build",
+              "projects": "dependencies"
+            },
+            {
+              "target": "build",
+              "projects": "self"
+            }
+          ]
+        },
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "mkdir -p vendor/demo-nx-php && rsync libs/package-a/ vendor/demo-nx-php/package-a --exclude Test -r"
+              }
+            ]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "php-executor"
+      ]
+    },
+    "package-b": {
+      "root": "libs/package-b",
+      "sourceRoot": "libs/package-b/src",
+      "projectType": "library",
+      "targets": {
+        "test": {
+          "executor": "./dist/tools/executors/php:phpunit",
+          "dependsOn": [
+            {
+              "target": "build",
+              "projects": "dependencies"
+            },
+            {
+              "target": "build",
+              "projects": "self"
+            }
+          ]
+        },
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "mkdir -p vendor/demo-nx-php && rsync libs/package-b/ vendor/demo-nx-php/package-b --exclude Test -r"
+              }
+            ]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "package-a",
+        "php-executor"
+      ]
+    },
+    "package-c": {
+      "root": "libs/package-c",
+      "sourceRoot": "libs/package-c/src",
+      "projectType": "library",
+      "targets": {
+        "test": {
+          "executor": "./dist/tools/executors/php:phpunit",
+          "dependsOn": [
+            {
+              "target": "build",
+              "projects": "dependencies"
+            },
+            {
+              "target": "build",
+              "projects": "self"
+            }
+          ]
+        },
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "mkdir -p vendor/demo-nx-php && rsync libs/package-c/ vendor/demo-nx-php/package-c --exclude Test -r"
+              }
+            ]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "package-b",
+        "php-executor"
+      ]
+    },
+    "php-executor": {
+      "root": "tools/executors/php",
+      "sourceRoot": "tools/executors/php",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/tools/executors/php"
+          ],
+          "options": {
+            "commands": [
+              "npx tsc -b tools/executors/php/tsconfig.lib.json",
+              "rsync -rv --include '*/' --include '*.json' --exclude '*' --prune-empty-dirs tools/executors/php/ dist/tools/executors/php"
+            ],
+            "parallel": false
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": []
+    }
+  }
 }
