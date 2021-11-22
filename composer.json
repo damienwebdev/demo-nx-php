@@ -1,0 +1,19 @@
+{
+    "name": "damien/demo-nx-php",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Damien\\DemoNxPhp\\": "libs/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Damien Retzinger",
+            "email": "damienwebdev@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
