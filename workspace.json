@@ -1,7 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "package-a": {
+    "demo-nx-php/package-a": {
       "root": "libs/package-a",
       "sourceRoot": "libs/package-a/src",
       "projectType": "library",
@@ -35,7 +35,7 @@
         "php-executor"
       ]
     },
-    "package-b": {
+    "demo-nx-php/package-b": {
       "root": "libs/package-b",
       "sourceRoot": "libs/package-b/src",
       "projectType": "library",
@@ -66,11 +66,10 @@
       },
       "tags": [],
       "implicitDependencies": [
-        "package-a",
         "php-executor"
       ]
     },
-    "package-c": {
+    "demo-nx-php/package-c": {
       "root": "libs/package-c",
       "sourceRoot": "libs/package-c/src",
       "projectType": "library",
@@ -101,7 +100,6 @@
       },
       "tags": [],
       "implicitDependencies": [
-        "package-b",
         "php-executor"
       ]
     },

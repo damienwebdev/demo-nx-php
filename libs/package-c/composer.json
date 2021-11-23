@@ -12,5 +12,8 @@
             "name": "Damien Retzinger",
             "email": "damienwebdev@gmail.com"
         }
-    ]
+    ],
+    "requires": {
+        "demo-nx-php/package-b": "*"
+    }
 }
