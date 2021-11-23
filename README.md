@@ -23,10 +23,10 @@ npm ci
 composer install
 
 # This is the first run, you have no cache.
-npx nx run package-c:test
+npx nx run demo-nx-php/package-c:test
 
 # This is the second run, you have cache.
-npx nx run package-c:test
+npx nx run demo-nx-php/package-c:test
 ```
 
 https://user-images.githubusercontent.com/9029654/142913178-8070580d-3d72-4141-a0e0-63dd547a39e1.mp4
